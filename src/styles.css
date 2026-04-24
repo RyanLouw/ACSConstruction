@@ -1,0 +1,103 @@
+:root {
+  color-scheme: light;
+  --bg: #ececec;
+  --text: #111;
+  --accent: #76a8e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.top-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #444;
+  background: var(--bg);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.section {
+  width: min(1000px, 90vw);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.hero {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.chip-list li {
+  padding: 0.6rem 1rem;
+  border: 1px solid #333;
+  border-radius: 999px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+}
+
+.img-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, #ddd, #f9f9f9);
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  text-align: center;
+  border-top: 1px solid #b8cbeb;
+}

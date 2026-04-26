@@ -1,3 +1,6 @@
+
+import React from 'react';
+
 const navigationLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Who We Are', href: '#who-we-are' },

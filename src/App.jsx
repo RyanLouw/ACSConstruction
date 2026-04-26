@@ -100,10 +100,6 @@ const beforeAfterPairs = [
 ];
 
 export default function App() {
-  const openEmailClient = () => {
-    window.location.href = emailHref;
-  };
-
   const openGmail = () => {
     window.open(gmailHref, '_blank', 'noopener,noreferrer');
   };
@@ -229,15 +225,9 @@ export default function App() {
             Send us your project details and our team will get back to you. Use the Gmail button
             below to open Gmail directly.
           </p>
-          <div className="contact-actions">
-            <button className="contact-email" type="button" onClick={openGmail}>
-              Open Gmail
-            </button>
-            <button className="contact-email secondary" type="button" onClick={openEmailClient}>
-              Open default email app
-            </button>
-          </div>
-          <p className="contact-hint">or email directly: <a href={emailHref}>{contactEmail}</a></p>
+          <button className="contact-email" type="button" onClick={openGmail}>
+            Contact us on Gmail
+          </button>
         </section>
 
       </main>

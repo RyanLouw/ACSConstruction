@@ -239,6 +239,17 @@ li {
   background: #f2f7ff;
 }
 
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.contact-email.secondary {
+  color: var(--muted);
+}
+
 .contact-hint {
   margin-top: 0.7rem;
   font-size: 0.88rem;

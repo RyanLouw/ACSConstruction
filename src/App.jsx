@@ -25,6 +25,7 @@ const navigationLinks = [
 
 const contactEmail = 'anthony@acsconstruction.co.za';
 const emailHref = `mailto:${contactEmail}?subject=Website%20Enquiry`;
+const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent('Website Enquiry')}`;
 
 const socialLinks = [
   { label: 'Facebook', href: '#' },
@@ -101,6 +102,10 @@ const beforeAfterPairs = [
 export default function App() {
   const openEmailClient = () => {
     window.location.href = emailHref;
+  };
+
+  const openGmail = () => {
+    window.open(gmailHref, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -221,12 +226,17 @@ export default function App() {
         <section className="section-space contact-section" id="contact-us">
           <h2>Contact Us</h2>
           <p>
-            Send us your project details and our team will get back to you. Clicking the email below
-            opens your default email service (Gmail, Outlook, Apple Mail, etc.).
+            Send us your project details and our team will get back to you. Use the Gmail button
+            below to open Gmail directly.
           </p>
-          <button className="contact-email" type="button" onClick={openEmailClient}>
-            Email {contactEmail}
-          </button>
+          <div className="contact-actions">
+            <button className="contact-email" type="button" onClick={openGmail}>
+              Open Gmail
+            </button>
+            <button className="contact-email secondary" type="button" onClick={openEmailClient}>
+              Open default email app
+            </button>
+          </div>
           <p className="contact-hint">or email directly: <a href={emailHref}>{contactEmail}</a></p>
         </section>
 

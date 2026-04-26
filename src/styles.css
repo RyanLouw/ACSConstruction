@@ -120,10 +120,16 @@ li {
   object-fit: cover;
 }
 
-.uniform-image {
+.gallery-image {
   width: 360px;
   height: 230px;
   min-height: 230px;
+}
+
+.comparison-image {
+  width: min(100%, 460px);
+  height: 260px;
+  min-height: 260px;
 }
 
 .hero-image {
@@ -154,7 +160,8 @@ li {
 }
 
 .before-after-card {
-  text-align: left;
+  text-align: center;
+  padding: 0.8rem 0 1.1rem;
 }
 
 .before-after-card h4 {
@@ -162,10 +169,28 @@ li {
   color: var(--text);
 }
 
-.before-after-card > div {
+.comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 1rem;
+  justify-items: center;
+  align-items: start;
+  padding: 0.35rem 0.9rem 0;
+}
+
+.comparison-item {
+  margin: 0;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+}
+
+.comparison-item figcaption {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .service-grid {
@@ -214,7 +239,7 @@ li {
 @media (max-width: 840px) {
   .masthead,
   .service-grid,
-  .before-after-card > div {
+  .comparison-grid {
     grid-template-columns: 1fr;
   }
 
@@ -223,10 +248,15 @@ li {
     justify-content: center;
   }
 
-  .uniform-image {
+  .gallery-image {
     width: 290px;
     height: 190px;
     min-height: 190px;
+  }
+
+  .comparison-image {
+    height: 220px;
+    min-height: 220px;
   }
 
   .hero-image {

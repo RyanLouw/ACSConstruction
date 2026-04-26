@@ -151,7 +151,7 @@ export default function App() {
           <div className="infinite-gallery" aria-label="Scrolling project gallery">
             <div className="infinite-track">
               {[...showcaseImages, ...showcaseImages].map((image, index) => (
-                <img key={`${image.alt}-${index}`} className="section-image uniform-image" src={image.src} alt={image.alt} />
+                <img key={`${image.alt}-${index}`} className="section-image gallery-image" src={image.src} alt={image.alt} />
               ))}
             </div>
           </div>
@@ -163,9 +163,15 @@ export default function App() {
             {beforeAfterPairs.map((pair) => (
               <article key={pair.title} className="before-after-card">
                 <h4>{pair.title}</h4>
-                <div>
-                  <img className="section-image uniform-image" src={pair.before} alt={`${pair.title} before`} />
-                  <img className="section-image uniform-image" src={pair.after} alt={`${pair.title} after`} />
+                <div className="comparison-grid">
+                  <figure className="comparison-item">
+                    <figcaption>Before</figcaption>
+                    <img className="section-image comparison-image" src={pair.before} alt={`${pair.title} before`} />
+                  </figure>
+                  <figure className="comparison-item">
+                    <figcaption>After</figcaption>
+                    <img className="section-image comparison-image" src={pair.after} alt={`${pair.title} after`} />
+                  </figure>
                 </div>
               </article>
             ))}

@@ -24,11 +24,12 @@ const navigationLinks = [
 ];
 
 const contactEmail = 'anthony@acsconstruction.co.za';
+const emailHref = `mailto:${contactEmail}?subject=Website%20Enquiry`;
 
 const socialLinks = [
   { label: 'Facebook', href: '#' },
   { label: 'Instagram', href: '#' },
-  { label: 'Email', href: `mailto:${contactEmail}?subject=Website%20Enquiry` }
+  { label: 'Email', href: emailHref }
 ];
 
 const serviceColumns = [
@@ -98,6 +99,10 @@ const beforeAfterPairs = [
 ];
 
 export default function App() {
+  const openEmailClient = () => {
+    window.location.href = emailHref;
+  };
+
   return (
     <div className="page" id="home">
       <header className="masthead section-divider">
@@ -219,9 +224,10 @@ export default function App() {
             Send us your project details and our team will get back to you. Clicking the email below
             opens your default email service (Gmail, Outlook, Apple Mail, etc.).
           </p>
-          <a className="contact-email" href={`mailto:${contactEmail}?subject=Website%20Enquiry`}>
-            {contactEmail}
-          </a>
+          <button className="contact-email" type="button" onClick={openEmailClient}>
+            Email {contactEmail}
+          </button>
+          <p className="contact-hint">or email directly: <a href={emailHref}>{contactEmail}</a></p>
         </section>
 
       </main>
@@ -229,7 +235,7 @@ export default function App() {
       <footer className="footer section-space" id="contact">
         <div>
           <a href="#home">Home</a>
-          <a href={`mailto:${contactEmail}?subject=Website%20Enquiry`}>Contact</a>
+          <a href={emailHref}>Contact</a>
         </div>
         <p>Made with care for ACS Construction.</p>
       </footer>

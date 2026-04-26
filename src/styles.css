@@ -230,11 +230,22 @@ li {
   color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.01em;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .contact-email:hover {
   border-color: var(--accent);
   background: #f2f7ff;
+}
+
+.contact-hint {
+  margin-top: 0.7rem;
+  font-size: 0.88rem;
+}
+
+.contact-hint a {
+  color: var(--accent);
 }
 .footer {
   display: grid;

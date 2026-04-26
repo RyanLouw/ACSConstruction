@@ -1,5 +1,21 @@
-
 import React from 'react';
+
+import sunsetHero from '../Images/steel-warehouse-frame-sunset-construction-progress.jpeg';
+import leadershipImage from '../Images/glass-office-partition-meeting-room.JPG';
+import leadershipSupportImage from '../Images/office-brand-wall-glass-partition-design.jpeg';
+import safetyImage from '../Images/industrial-wall-safety-inspection-progress.JPG';
+import supplierImage from '../Images/aerial-warehouse-loading-yard-road-view.JPG';
+import capabilityImage from '../Images/steel-frame-warehouse-crane-installation-progress.JPG';
+import clientImage from '../Images/fuel-station-canopy-completed-after.jpeg';
+import projectRoofImage from '../Images/warehouse-roof-sheeting-installation-after.JPG';
+import projectRoadImage from '../Images/industrial-yard-road-marking-after.jpg';
+import projectWorkshopImage from '../Images/industrial-workshop-polished-floor-after.jpeg';
+import kitchenBefore from '../Images/open-plan-kitchen-renovation-progress.jpeg';
+import kitchenAfter from '../Images/modern-kitchen-renovation-after.jpeg';
+import restroomBefore from '../Images/modern-male-restroom-urinal-wall-design.jpeg';
+import restroomAfter from '../Images/modern-male-restroom-urinal-wall-tiles-after.jpeg';
+import livingBefore from '../Images/open-plan-living-area-renovation-before.jpeg';
+import officeAfter from '../Images/modern-office-corridor-glass-partition-after.jpeg';
 
 const navigationLinks = [
   { label: 'Home', href: '#home' },
@@ -29,12 +45,7 @@ const serviceColumns = [
   },
   {
     title: 'Interior Construction & Finishes',
-    items: [
-      'Drywall and partitioning',
-      'Suspended ceilings',
-      'Commercial painting',
-      'Flooring installation'
-    ]
+    items: ['Drywall and partitioning', 'Suspended ceilings', 'Commercial painting', 'Flooring installation']
   },
   {
     title: 'Renovations & Refurbishments',
@@ -53,6 +64,30 @@ const serviceColumns = [
       'Exterior renovations',
       'Surface preparation and finishing'
     ]
+  }
+];
+
+const projectHighlights = [
+  { src: projectRoofImage, alt: 'Completed warehouse roof sheeting installation' },
+  { src: projectRoadImage, alt: 'Industrial yard road marking completion' },
+  { src: projectWorkshopImage, alt: 'Industrial workshop polished flooring result' }
+];
+
+const beforeAfterPairs = [
+  {
+    title: 'Kitchen renovation',
+    before: kitchenBefore,
+    after: kitchenAfter
+  },
+  {
+    title: 'Restroom upgrade',
+    before: restroomBefore,
+    after: restroomAfter
+  },
+  {
+    title: 'Interior modernization',
+    before: livingBefore,
+    after: officeAfter
   }
 ];
 
@@ -81,7 +116,7 @@ export default function App() {
 
       <main>
         <section className="hero section-space section-divider">
-          <div className="image-placeholder tall" aria-label="Hero image placeholder" />
+          <img className="section-image hero-image" src={sunsetHero} alt="Steel warehouse frame at sunset" />
           <h1>ACS Construction</h1>
           <p>
             Delivers architectural precision and industrial-grade craftsmanship, ensuring your
@@ -138,8 +173,8 @@ export default function App() {
             </p>
           </article>
           <div className="image-stack">
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
+            <img className="section-image" src={leadershipImage} alt="Glass office partition installation" />
+            <img className="section-image" src={leadershipSupportImage} alt="Office brand wall and partition finish" />
           </div>
         </section>
 
@@ -174,18 +209,33 @@ export default function App() {
             </p>
           </article>
           <div className="image-stack">
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
+            <img className="section-image" src={safetyImage} alt="Team performing an industrial safety inspection" />
+            <img className="section-image" src={supplierImage} alt="Aerial view of warehouse yard and logistics road access" />
+            <img className="section-image" src={capabilityImage} alt="Crane-assisted steel frame warehouse construction" />
+            <img className="section-image" src={clientImage} alt="Completed fuel station canopy project" />
           </div>
         </section>
 
         <section className="section-space center section-divider">
-          <h2>Our most trusted clients</h2>
-          <p>Client logos will be placed here once image assets are provided.</p>
+          <h2>Project Highlights</h2>
+          <div className="project-grid">
+            {projectHighlights.map((project) => (
+              <img key={project.alt} className="section-image" src={project.src} alt={project.alt} />
+            ))}
+          </div>
 
-          <h3>Before and after:</h3>
-          <p>Before/after image comparisons will be added in this section.</p>
+          <h3>Before and after</h3>
+          <div className="before-after-grid">
+            {beforeAfterPairs.map((pair) => (
+              <article key={pair.title} className="before-after-card">
+                <h4>{pair.title}</h4>
+                <div>
+                  <img className="section-image" src={pair.before} alt={`${pair.title} before`} />
+                  <img className="section-image" src={pair.after} alt={`${pair.title} after`} />
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="section-space" id="services">

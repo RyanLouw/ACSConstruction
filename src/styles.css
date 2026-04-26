@@ -215,6 +215,27 @@ li {
   padding-left: 1.1rem;
 }
 
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 0.65rem;
+  padding: 0.75rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.contact-email:hover {
+  border-color: var(--accent);
+  background: #f2f7ff;
+}
 .footer {
   display: grid;
   gap: 0.9rem;

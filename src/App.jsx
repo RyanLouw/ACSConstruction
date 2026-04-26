@@ -20,13 +20,15 @@ import officeAfter from '../Images/modern-office-corridor-glass-partition-after.
 const navigationLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Contact', href: '#contact-us' }
 ];
+
+const contactEmail = 'anthony@acsconstruction.co.za';
 
 const socialLinks = [
   { label: 'Facebook', href: '#' },
   { label: 'Instagram', href: '#' },
-  { label: 'Email', href: 'mailto:anthony@acsconstruction.co.za?subject=Website%20Enquiry' }
+  { label: 'Email', href: `mailto:${contactEmail}?subject=Website%20Enquiry` }
 ];
 
 const serviceColumns = [
@@ -75,6 +77,7 @@ const showcaseImages = [
   { src: capabilityImage, alt: 'Crane-assisted steel frame warehouse construction' },
   { src: clientImage, alt: 'Completed fuel station canopy project' }
 ];
+
 
 const beforeAfterPairs = [
   {
@@ -209,12 +212,24 @@ export default function App() {
             management, material procurement, site supervision, scheduling, and quality control.
           </p>
         </section>
+
+        <section className="section-space contact-section" id="contact-us">
+          <h2>Contact Us</h2>
+          <p>
+            Send us your project details and our team will get back to you. Clicking the email below
+            opens your default email service (Gmail, Outlook, Apple Mail, etc.).
+          </p>
+          <a className="contact-email" href={`mailto:${contactEmail}?subject=Website%20Enquiry`}>
+            {contactEmail}
+          </a>
+        </section>
+
       </main>
 
       <footer className="footer section-space" id="contact">
         <div>
           <a href="#home">Home</a>
-          <a href="mailto:anthony@acsconstruction.co.za?subject=Website%20Enquiry">Contact</a>
+          <a href={`mailto:${contactEmail}?subject=Website%20Enquiry`}>Contact</a>
         </div>
         <p>Made with care for ACS Construction.</p>
       </footer>

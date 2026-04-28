@@ -1,19 +1,36 @@
-
 import React from 'react';
+
+import sunsetHero from '../Images/steel-warehouse-frame-sunset-construction-progress.jpeg';
+import leadershipImage from '../Images/glass-office-partition-meeting-room.JPG';
+import leadershipSupportImage from '../Images/office-brand-wall-glass-partition-design.jpeg';
+import safetyImage from '../Images/industrial-wall-safety-inspection-progress.JPG';
+import supplierImage from '../Images/aerial-warehouse-loading-yard-road-view.JPG';
+import capabilityImage from '../Images/steel-frame-warehouse-crane-installation-progress.JPG';
+import clientImage from '../Images/fuel-station-canopy-completed-after.jpeg';
+import projectRoofImage from '../Images/warehouse-roof-sheeting-installation-after.JPG';
+import projectRoadImage from '../Images/industrial-yard-road-marking-after.jpg';
+import projectWorkshopImage from '../Images/industrial-workshop-polished-floor-after.jpeg';
+import kitchenBefore from '../Images/open-plan-kitchen-renovation-progress.jpeg';
+import kitchenAfter from '../Images/modern-kitchen-renovation-after.jpeg';
+import restroomBefore from '../Images/modern-male-restroom-urinal-wall-design.jpeg';
+import restroomAfter from '../Images/modern-male-restroom-urinal-wall-tiles-after.jpeg';
+import livingBefore from '../Images/open-plan-living-area-renovation-before.jpeg';
+import officeAfter from '../Images/modern-office-corridor-glass-partition-after.jpeg';
 
 const navigationLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Who We Are', href: '#who-we-are' },
   { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Approach', href: '#approach' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Contact', href: '#contact-us' }
 ];
+
+const contactEmail = 'anthony@acsconstruction.co.za';
+const emailHref = `mailto:${contactEmail}?subject=Website%20Enquiry`;
+const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactEmail)}&su=${encodeURIComponent('Website Enquiry')}`;
 
 const socialLinks = [
   { label: 'Facebook', href: '#' },
   { label: 'Instagram', href: '#' },
-  { label: 'Email', href: 'mailto:anthony@acsconstruction.co.za?subject=Website%20Enquiry' }
+  { label: 'Email', href: emailHref }
 ];
 
 const serviceColumns = [
@@ -29,12 +46,7 @@ const serviceColumns = [
   },
   {
     title: 'Interior Construction & Finishes',
-    items: [
-      'Drywall and partitioning',
-      'Suspended ceilings',
-      'Commercial painting',
-      'Flooring installation'
-    ]
+    items: ['Drywall and partitioning', 'Suspended ceilings', 'Commercial painting', 'Flooring installation']
   },
   {
     title: 'Renovations & Refurbishments',
@@ -56,7 +68,42 @@ const serviceColumns = [
   }
 ];
 
+const showcaseImages = [
+  { src: projectRoofImage, alt: 'Completed warehouse roof sheeting installation' },
+  { src: projectRoadImage, alt: 'Industrial yard road marking completion' },
+  { src: projectWorkshopImage, alt: 'Industrial workshop polished flooring result' },
+  { src: leadershipImage, alt: 'Glass office partition installation' },
+  { src: leadershipSupportImage, alt: 'Office brand wall and partition finish' },
+  { src: safetyImage, alt: 'Team performing an industrial safety inspection' },
+  { src: supplierImage, alt: 'Aerial view of warehouse yard and logistics road access' },
+  { src: capabilityImage, alt: 'Crane-assisted steel frame warehouse construction' },
+  { src: clientImage, alt: 'Completed fuel station canopy project' }
+];
+
+
+const beforeAfterPairs = [
+  {
+    title: 'Kitchen renovation',
+    before: kitchenBefore,
+    after: kitchenAfter
+  },
+  {
+    title: 'Restroom upgrade',
+    before: restroomBefore,
+    after: restroomAfter
+  },
+  {
+    title: 'Office interior upgrade',
+    before: livingBefore,
+    after: officeAfter
+  }
+];
+
 export default function App() {
+  const openGmail = () => {
+    window.open(gmailHref, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="page" id="home">
       <header className="masthead section-divider">
@@ -81,7 +128,7 @@ export default function App() {
 
       <main>
         <section className="hero section-space section-divider">
-          <div className="image-placeholder tall" aria-label="Hero image placeholder" />
+          <img className="section-image hero-image" src={sunsetHero} alt="Steel warehouse frame at sunset" />
           <h1>ACS Construction</h1>
           <p>
             Delivers architectural precision and industrial-grade craftsmanship, ensuring your
@@ -105,87 +152,39 @@ export default function App() {
             Johannesburg and a growing presence in the Western Cape, supporting commercial and
             industrial clients nationwide.
           </p>
-          <p>
-            The company specializes in commercial buildings, warehouse construction, industrial
-            facilities, refurbishments and structural building work, managing projects from initial
-            planning through to final completion.
-          </p>
-          <p>
-            ACS Construction combines the responsiveness of a local contractor with the ability to
-            deploy large teams depending on project requirements, enabling efficient delivery of
-            projects of varying scale and complexity.
-          </p>
         </section>
 
-        <section className="section-space two-col section-divider">
-          <article>
-            <h2>Leadership</h2>
-            <p>
-              ACS Construction remains a family-founded business with strong operational leadership.
-            </p>
-            <p>
-              The company was founded by its current COO, who brings extensive experience from the
-              construction industry and oversees the execution and delivery of projects.
-            </p>
-            <p>
-              The company’s expansion into the Western Cape and marketing strategy is managed by the
-              Western Cape branch lead, who is responsible for growing ACS Construction’s presence
-              and developing new commercial relationships.
-            </p>
-            <p>
-              This leadership structure allows ACS Construction to maintain strong operational
-              control while expanding into new regions and larger developments.
-            </p>
-          </article>
-          <div className="image-stack">
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
+        <section className="section-space section-divider">
+          <h2>Project Gallery</h2>
+          <p>Live project progress and completed results from ACS Construction sites.</p>
+          <div className="infinite-gallery" aria-label="Scrolling project gallery">
+            <div className="infinite-track">
+              {[...showcaseImages, ...showcaseImages].map((image, index) => (
+                <img key={`${image.alt}-${index}`} className="section-image gallery-image" src={image.src} alt={image.alt} />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section-space two-col" id="projects">
-          <article>
-            <h2>Safety and Professional Standards</h2>
-            <p>
-              ACS Construction maintains strict construction site safety practices and ensures all
-              teams operate within required safety standards.
-            </p>
-            <p>
-              Safety procedures and protective equipment are monitored throughout project execution
-              to ensure safe and compliant working environments.
-            </p>
-
-            <h2>Supplier Network</h2>
-            <p>
-              ACS Construction works closely with large material suppliers, allowing the company to
-              secure competitive pricing and reliable supply chains.
-            </p>
-            <p>
-              These long-standing supplier relationships enable ACS to procure materials quickly,
-              maintain cost efficiency on projects, and remain competitive while delivering quality
-              results.
-            </p>
-
-            <h2>Ideal Clients</h2>
-            <p>
-              ACS Construction focuses on supporting large corporates, property developers, and
-              commercial landlords who require reliable contractors capable of delivering industrial
-              and commercial construction projects.
-            </p>
-          </article>
-          <div className="image-stack">
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
-            <div className="image-placeholder" />
+        <section className="section-space center section-divider" id="projects">
+          <h3>Before and after</h3>
+          <div className="before-after-grid">
+            {beforeAfterPairs.map((pair) => (
+              <article key={pair.title} className="before-after-card">
+                <h4>{pair.title}</h4>
+                <div className="comparison-grid">
+                  <figure className="comparison-item">
+                    <figcaption>Before</figcaption>
+                    <img className="section-image comparison-image" src={pair.before} alt={`${pair.title} before`} />
+                  </figure>
+                  <figure className="comparison-item">
+                    <figcaption>After</figcaption>
+                    <img className="section-image comparison-image" src={pair.after} alt={`${pair.title} after`} />
+                  </figure>
+                </div>
+              </article>
+            ))}
           </div>
-        </section>
-
-        <section className="section-space center section-divider">
-          <h2>Our most trusted clients</h2>
-          <p>Client logos will be placed here once image assets are provided.</p>
-
-          <h3>Before and after:</h3>
-          <p>Before/after image comparisons will be added in this section.</p>
         </section>
 
         <section className="section-space" id="services">
@@ -218,64 +217,25 @@ export default function App() {
             When required, ACS coordinates project planning, engineering coordination, workforce
             management, material procurement, site supervision, scheduling, and quality control.
           </p>
-          <p>
-            If a client already works with architects or engineers, ACS Construction integrates
-            directly with the professional team to manage construction efficiently.
-          </p>
-          <p>
-            This approach simplifies the construction process and ensures clear accountability and
-            reliable delivery.
-          </p>
-
-          <h2>Experience</h2>
-          <p>
-            Over the past 15 years, ACS Construction has completed a wide range of projects
-            including warehouse construction projects, large industrial roofing and painting
-            projects, commercial refurbishments, and resort renovations and rebuilds.
-          </p>
-          <p>
-            One notable project included the completion of over 41,000 square metres of warehouse
-            roof work within a one-month period, demonstrating the company’s ability to mobilize
-            large teams and execute projects within demanding timeframes.
-          </p>
-
-          <h2>Operational Capability</h2>
-          <p>
-            ACS Construction is structured to scale its workforce and equipment depending on project
-            requirements.
-          </p>
-          <p>
-            The company has successfully deployed teams of more than 50 workers on a single project
-            site, allowing projects to be completed efficiently even under tight deadlines.
-          </p>
-          <p>
-            ACS also maintains strong relationships with construction equipment providers, enabling
-            rapid access to additional machinery and equipment when needed.
-          </p>
         </section>
 
-        <section className="section-space two-col section-divider">
-          <div className="logo">ACS CONSTRUCTION</div>
-          <article>
-            <h2>Vision for the Future</h2>
-            <p>
-              ACS Construction’s long-term vision is to become a leading contractor in the
-              development of large-scale warehouses and multi-million rand commercial construction
-              projects.
-            </p>
-            <p>
-              The company is actively expanding its presence into the Western Cape, positioning
-              itself to support the growing demand for logistics facilities and commercial
-              developments in the region.
-            </p>
-          </article>
+        <section className="section-space contact-section" id="contact-us">
+          <h2>Contact Us</h2>
+          <p>
+            Send us your project details and our team will get back to you. Use the Gmail button
+            below to open Gmail directly.
+          </p>
+          <button className="contact-email" type="button" onClick={openGmail}>
+            Contact us on Gmail
+          </button>
         </section>
+
       </main>
 
       <footer className="footer section-space" id="contact">
         <div>
           <a href="#home">Home</a>
-          <a href="mailto:anthony@acsconstruction.co.za?subject=Website%20Enquiry">Contact</a>
+          <a href={emailHref}>Contact</a>
         </div>
         <p>Made with care for ACS Construction.</p>
       </footer>

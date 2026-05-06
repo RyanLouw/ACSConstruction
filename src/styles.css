@@ -85,6 +85,7 @@ a {
 }
 
 .hero {
+  width: min(1500px, 99vw);
   text-align: center;
 }
 
@@ -134,7 +135,7 @@ li {
 
 .hero-frame {
   position: relative;
-  width: min(1200px, 100%);
+  width: min(1480px, 100%);
   margin: 0 auto 1.3rem;
   border-radius: 10px;
   overflow: hidden;
@@ -177,9 +178,11 @@ li {
 
 .hero-letter-c {
   color: #3495d1;
-  font-size: 1.5em;
-  margin-left: -0.06em;
-  margin-right: -0.08em;
+  font-size: 1.68em;
+  margin-left: -0.09em;
+  margin-right: -0.1em;
+  transform: scaleX(0.74) scaleY(1.16);
+  transform-origin: center;
 }
 
 .hero-letter-s {

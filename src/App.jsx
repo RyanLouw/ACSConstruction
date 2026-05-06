@@ -116,7 +116,9 @@ export default function App() {
           ))}
         </nav>
 
-        <div className="logo">ACS CONSTRUCTION</div>
+        <div className="logo">
+          <img className="logo-image" src={logoImage} alt="ACS Construction" />
+        </div>
 
         <nav className="link-row right" aria-label="Social links">
           {socialLinks.map((link) => (

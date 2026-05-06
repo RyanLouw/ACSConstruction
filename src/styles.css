@@ -68,10 +68,15 @@ a {
 }
 
 .logo {
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-align: center;
-  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: clamp(170px, 22vw, 280px);
+  height: auto;
+  display: block;
 }
 
 .section-space {

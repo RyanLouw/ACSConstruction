@@ -1,6 +1,7 @@
 import React from 'react';
 
 import heroImage from '../Images/hero.png';
+import logoImage from '../Images/logo 2.png';
 import leadershipImage from '../Images/glass-office-partition-meeting-room.JPG';
 import leadershipSupportImage from '../Images/office-brand-wall-glass-partition-design.jpeg';
 import safetyImage from '../Images/industrial-wall-safety-inspection-progress.JPG';
@@ -131,17 +132,10 @@ export default function App() {
           <div className="hero-frame">
             <img className="section-image hero-image" src={heroImage} alt="ACS Construction hero project showcase" />
             <div className="hero-brand" aria-label="ACS Construction">
-              <div className="hero-logo-mark" aria-hidden="true">
-                <span className="hero-letter hero-letter-a">A</span>
-                <span className="hero-letter hero-letter-c">C</span>
-                <span className="hero-letter hero-letter-s">S</span>
-              </div>
-              <div className="hero-brand-rule" aria-hidden="true" />
-              <div className="hero-brand-word" aria-hidden="true">CONSTRUCTION</div>
+              <img className="hero-brand-logo" src={logoImage} alt="" aria-hidden="true" />
             </div>
           </div>
-          <h1>ACS Construction</h1>
-          <p>
+          <p className="hero-statement">
             Delivers architectural precision and industrial-grade craftsmanship, ensuring your
             commercial vision is executed with technical authority.
           </p>

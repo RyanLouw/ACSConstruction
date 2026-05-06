@@ -136,14 +136,16 @@ li {
 .hero-frame {
   position: relative;
   width: min(1480px, 100%);
-  margin: 0 auto 1.3rem;
-  border-radius: 10px;
+  margin: 0 auto;
+  border-radius: 0;
   overflow: hidden;
 }
 
 .hero-image {
   height: 460px;
   margin: 0;
+  border: 0;
+  border-radius: 0;
   filter: grayscale(100%);
 }
 
@@ -151,60 +153,28 @@ li {
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: clamp(1rem, 4vw, 3rem);
   pointer-events: none;
-  text-transform: uppercase;
-  transform: translateY(4%);
 }
 
-.hero-logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif;
-  font-size: clamp(5rem, 18vw, 14rem);
-  font-weight: 900;
-  letter-spacing: -0.16em;
-  line-height: 0.72;
-  color: #000000;
+.hero-brand-logo {
+  width: min(78%, 920px);
+  height: auto;
+  display: block;
 }
 
-.hero-letter {
-  display: inline-block;
-}
-
-.hero-letter-c {
-  color: #3495d1;
-  font-size: 1.68em;
-  margin-left: -0.09em;
-  margin-right: -0.1em;
-  transform: scaleX(0.74) scaleY(1.16);
-  transform-origin: center;
-}
-
-.hero-letter-s {
-  transform: skewX(-14deg) scaleX(1.18);
-  transform-origin: center;
-}
-
-.hero-brand-rule {
-  width: min(78%, 720px);
-  height: clamp(4px, 0.7vw, 8px);
-  margin-top: clamp(0.35rem, 1vw, 0.75rem);
-  background: #d32978;
-}
-
-.hero-brand-word {
-  margin-top: clamp(0.25rem, 0.9vw, 0.55rem);
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.8rem, 6.6vw, 5.5rem);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 0.82;
-  color: #000000;
+.hero-statement {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.3rem, 3vw, 2.5rem) clamp(1rem, 5vw, 4rem);
+  background: #3495d1;
+  color: #ffffff;
+  font-size: clamp(1rem, 2vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
 }
 
 .center {

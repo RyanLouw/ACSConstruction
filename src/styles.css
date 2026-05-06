@@ -90,7 +90,9 @@ a {
 }
 
 .hero {
-  width: min(1500px, 99vw);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   text-align: center;
 }
 
@@ -140,8 +142,8 @@ li {
 
 .hero-frame {
   position: relative;
-  width: min(1480px, 100%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   border-radius: 0;
   overflow: hidden;
 }
@@ -171,8 +173,8 @@ li {
 }
 
 .hero-statement {
-  width: min(1480px, 100%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: clamp(1.3rem, 3vw, 2.5rem) clamp(1rem, 5vw, 4rem);
   background: #3495d1;
   color: #ffffff;

@@ -128,7 +128,18 @@ export default function App() {
 
       <main>
         <section className="hero section-space section-divider">
-          <img className="section-image hero-image" src={heroImage} alt="ACS Construction hero project showcase" />
+          <div className="hero-frame">
+            <img className="section-image hero-image" src={heroImage} alt="ACS Construction hero project showcase" />
+            <div className="hero-brand" aria-label="ACS Construction">
+              <div className="hero-logo-mark" aria-hidden="true">
+                <span className="hero-letter hero-letter-a">A</span>
+                <span className="hero-letter hero-letter-c">C</span>
+                <span className="hero-letter hero-letter-s">S</span>
+              </div>
+              <div className="hero-brand-rule" aria-hidden="true" />
+              <div className="hero-brand-word" aria-hidden="true">CONSTRUCTION</div>
+            </div>
+          </div>
           <h1>ACS Construction</h1>
           <p>
             Delivers architectural precision and industrial-grade craftsmanship, ensuring your

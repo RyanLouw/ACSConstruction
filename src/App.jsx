@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sunsetHero from '../Images/steel-warehouse-frame-sunset-construction-progress.jpeg';
+import sunsetHero from '../Images/Hero.jpeg';
 import leadershipImage from '../Images/glass-office-partition-meeting-room.JPG';
 import leadershipSupportImage from '../Images/office-brand-wall-glass-partition-design.jpeg';
 import safetyImage from '../Images/industrial-wall-safety-inspection-progress.JPG';

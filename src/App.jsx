@@ -1,6 +1,7 @@
 import React from 'react';
 
-import sunsetHero from '../Images/Hero.jpeg';
+import heroImage from '../Images/hero.png';
+import logoImage from '../Images/logo 2.png';
 import leadershipImage from '../Images/glass-office-partition-meeting-room.JPG';
 import leadershipSupportImage from '../Images/office-brand-wall-glass-partition-design.jpeg';
 import safetyImage from '../Images/industrial-wall-safety-inspection-progress.JPG';
@@ -115,7 +116,9 @@ export default function App() {
           ))}
         </nav>
 
-        <div className="logo">ACS CONSTRUCTION</div>
+        <div className="logo">
+          <img className="logo-image" src={logoImage} alt="ACS Construction" />
+        </div>
 
         <nav className="link-row right" aria-label="Social links">
           {socialLinks.map((link) => (
@@ -128,9 +131,13 @@ export default function App() {
 
       <main>
         <section className="hero section-space section-divider">
-          <img className="section-image hero-image" src={sunsetHero} alt="Steel warehouse frame at sunset" />
-          <h1>ACS Construction</h1>
-          <p>
+          <div className="hero-frame">
+            <img className="section-image hero-image" src={heroImage} alt="ACS Construction hero project showcase" />
+            <div className="hero-brand" aria-label="ACS Construction">
+              <img className="hero-brand-logo" src={logoImage} alt="" aria-hidden="true" />
+            </div>
+          </div>
+          <p className="hero-statement">
             Delivers architectural precision and industrial-grade craftsmanship, ensuring your
             commercial vision is executed with technical authority.
           </p>

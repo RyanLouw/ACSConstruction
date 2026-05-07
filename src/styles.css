@@ -68,10 +68,15 @@ a {
 }
 
 .logo {
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-align: center;
-  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  width: clamp(170px, 22vw, 280px);
+  height: auto;
+  display: block;
 }
 
 .section-space {
@@ -85,6 +90,9 @@ a {
 }
 
 .hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   text-align: center;
 }
 
@@ -132,10 +140,48 @@ li {
   min-height: 260px;
 }
 
+.hero-frame {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
 .hero-image {
-  width: min(1200px, 100%);
   height: 460px;
-  margin: 0 auto 1.3rem;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  filter: grayscale(100%);
+}
+
+.hero-brand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  pointer-events: none;
+}
+
+.hero-brand-logo {
+  width: min(78%, 920px);
+  height: auto;
+  display: block;
+}
+
+.hero-statement {
+  width: 100%;
+  margin: 0;
+  padding: clamp(1.3rem, 3vw, 2.5rem) clamp(1rem, 5vw, 4rem);
+  background: #3495d1;
+  color: #ffffff;
+  font-size: clamp(1rem, 2vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
 }
 
 .center {
